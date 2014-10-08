@@ -7,7 +7,7 @@
 //
 
 #import "YGHAppDelegate.h"
-
+#import "YGHRootViewController.h"
 @implementation YGHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -15,6 +15,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    YGHRootViewController *root=[[YGHRootViewController alloc]init];
+    UINavigationController *mvc=[[UINavigationController alloc]initWithRootViewController:root];
+    self.window.rootViewController=mvc;
+  
     [self.window makeKeyAndVisible];
     return YES;
 }
